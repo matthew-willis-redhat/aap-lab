@@ -1,18 +1,12 @@
-node1:
-  ansible_host: 172.176.76.75
-node2:
-  ansible_host: 172.176.75.174
-node3:
-  ansible_host: 172.176.76.13
-node4:
-  ansible_host: 172.176.75.106
-node5:
-  ansible_host: 172.176.75.143
-
 rhce-lab:
   hosts:
     node1:
+      ansible_host: 172.176.76.75
     node2:
+      ansible_host: 172.176.75.174
     node3:
+      ansible_host: 172.176.76.13
     node4:
+      ansible_host: 172.176.75.106
     node5:
+      ansible_host: 172.176.75.143
