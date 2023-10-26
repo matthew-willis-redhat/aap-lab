@@ -1,0 +1,29 @@
+---
+- name: Update SSHD Config
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Update SSHD Config - Banner
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "^#Banner none$"
+        line: "Banner /etc/motd"
+        backrefs: yes
+        state: present
+    
+    - name: Update SSHD Config - X11Forwarding
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "^#X11Forwarding no$"
+        line: "X11Forwarding no"
+        backrefs: yes
+        state: present
+
+    - name: Update SSHD Config - MaxAuthTries
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "^#MaxAuthTries 6$"
+        line: "MaxAuthTries 3"
+        backrefs: yes
+        state: present
