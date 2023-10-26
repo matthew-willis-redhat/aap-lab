@@ -6,7 +6,7 @@
   tasks:
     - name: Set Fact for Testing
       set_fact:
-        test_fact: "justatest"
+        test_fact: "anothertestfact"
         cacheable: true
 
     - name: Gather updated facts
