@@ -1,0 +1,9 @@
+---
+- name: Setting custom fact
+  hosts: all
+  gather_facts: true
+
+  tasks:
+    - name: Set Fact for Testing
+      ansible.builitin.set_fact:
+        test_fact: "justatest"
