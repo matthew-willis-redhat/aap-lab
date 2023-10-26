@@ -4,9 +4,17 @@
   gather_facts: true
 
   tasks:
-    - name: Set Fact for Testing
-      set_fact:
-        test_fact: "justatest"
-        cacheable: true
+    - name: Create Custom Facts Directory
+      ansible.builtin.file:
+        path: "/etc/ansible/facts.d"
+        state: directory
+        mode: "0755"
+
+    - name: Set Custom Fact
+      ansible.builtin.copy:
+        content: "foo: passed"
+        dest: "/etc/ansible/facts.d/custom.fact"
+        mode: "0644"
+
     - name: Gather updated facts
       ansible.builtin.setup:
