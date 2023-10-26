@@ -5,5 +5,5 @@
 
   tasks:
     - name: Set Fact for Testing
-      ansible.builitin.set_fact:
+      set_fact:
         test_fact: "justatest"
