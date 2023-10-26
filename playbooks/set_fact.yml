@@ -8,3 +8,5 @@
       set_fact:
         test_fact: "justatest"
         cacheable: true
+    - name: Gather updated facts
+      ansible.builtin.setup:
